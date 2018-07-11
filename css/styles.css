@@ -1,0 +1,184 @@
+/*Colours used:
+
+rgba(0, 100, 0, 0.8)
+
+*/
+
+.wrapper {
+    margin: 0 2rem;
+}
+
+h1,
+#title {
+    font-family: 'Playfair Display SC', serif;
+}
+
+#tag-line h1 {
+    font-size: 1.5rem;
+}
+
+li,
+p,
+button,
+em {
+    font-size: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+i {
+    margin-right: .5rem;
+    color: rgba(0, 100, 0, 0.8)
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    border-radius: 10px;
+}
+
+/*HEADER*/
+
+#masthead {
+    height: 15rem;
+    background-image: url(../img/hands-bg.jpg);
+    background-size: cover;
+}
+
+#tag-line {
+    margin-left: 1rem;
+    padding: .25rem;
+    width: 60%;
+    color: white;
+    background-color: rgba(0, 100, 0, 0.8);
+    border-radius: 10px;
+    position: relative;
+    bottom: -8rem;
+    left: 0;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+nav ul,
+footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: .75rem 0;
+    display: block;
+}
+
+.btns {
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: .5rem;
+    border: 1px solid rgba(0, 100, 0);
+    border-radius: 10px;
+}
+
+#active-button {
+    color: white;
+    background-color: rgba(0, 100, 0, 0.8);
+    border-radius: 10px;
+}
+
+#img img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*FOOTER*/
+
+footer {
+    padding-top: 2rem;
+    clear: both;
+}
+
+
+footer li,
+.btns li {
+    display: inline-block;
+}
+
+
+
+
+@media only screen and (min-width: 30rem) {
+
+
+    li,
+    p {
+        font-size: 1rem;
+    }
+
+    i {
+        font-size: 1.5rem;
+    }
+
+    nav li {
+        display: inline-block;
+        text-align: center;
+        width: 24%;
+    }
+
+    nav a {
+        padding: .5rem 1rem;
+        border: 1px solid rgba(0, 100, 0);
+    }
+
+    #img {
+        width: 25%;
+        display: inline-block;
+    }
+
+    #content {
+        width: 72%;
+        float: right;
+    }
+
+    .wrapper {
+        box-sizing: border-box;
+        padding: 2rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+
+}
+
+@media only screen and (min-width: 60rem) {
+    .wrapper {
+        margin: 0 auto;
+        max-width: 60rem;
+    }
+
+    #masthead {
+        height: 20rem;
+    }
+
+    #tag-line {
+        bottom: -13rem;
+    }
+
+    #tag-line h1 {
+        font-size: 2rem;
+    }
+    
+
+}
