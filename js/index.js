@@ -1,4 +1,4 @@
- // Load your images on page-load
+ // Preload images
  function preloader() {
      const imagesList = [
            "./img/wall.jpg",
@@ -10,23 +10,16 @@
          images[i] = new Image();
          images[i].src = imagesList[i];
      }
-
-     // Images ready to be used:
      console.log(`Preloaded images:\n\t${images[0].src}\n\t${images[1].src}\n\t${images[2].src}`);
  };
  window.addEventListener("load", preloader);
 
 
- /* 
- Get all buttons in a NODE LIST of buttons (array like structure) */
+ /* buttons to toggle through */
 
  const btns = document.querySelectorAll("button");
 
- /* 
- Complete your resource-object that will store the dynamic content.
- Resource object should 3 sub-objects. Give your sub-objects
- meaningful names. Every sub-object should have the following
- properties headingContent, bodyText, imgUrl and imgAlt. */
+ /* object of resources */
 
  const resources = {
      wall: {
@@ -49,47 +42,25 @@
      }
  };
 
- /* 
- Get the reference to your HTML-container
- that will be dynamically loaded from the resource-object. */
+ /* containers that will be changing dynamically */
 
  const heading = document.getElementById("title");
  const img = document.getElementById("img");
  const content = document.getElementById("content");
 
- /* 
- The first button in a NODE LIST of buttons will initially 
- have the id: active-button - this will uniquely style 
- the active button (CSS rule). 
-    
- The first content from the
- resource-object will be loaded on the page load:
- `<h1>${headingContent}</h1>
-  <img src="${imgUrl}" alt="${imgAlt}">
-  <p>${bodyText}</p>` */
 
- /* 
- Start your handleSelection function here. */
+ /* Function to perform on click */
 
  function handleSelection(ev) {
 
-     /* 
-     Remove the id active-button from the element that
-     contains it prior to the click-event. 
-
-     This will require the loop throught the NODE LIST of buttons. 
-     Inside the loop, use conditional and the element object method
-     hasAttribute() to check if the current button in the loop containes the id.
-     If it does, use element-object property removeAttribute()
-     to remove the id. */
+     /* Remove "active-button from first btn */
      for (let i = 0; i < btns.length; i++) {
          if (btns[i].hasAttribute("id")) {
              btns[i].removeAttribute("id");
          }
      }
 
-     /*
-     Use the element-object method setAttribute() to set the id active-button to the currently clicked button. */
+     /* put active-button on the btn that is clicked */
      let currentBtn = ev.target;
 
      if (currentBtn.textContent === "Trombe Wall") {
@@ -104,15 +75,7 @@
 
      }
 
-     /* 
-     Use conditional and event-object to check which button is clicked
-     and based on that, create HTML with the data inside the backticks:
-     `<h1>${headingContent}</h1>
-      <img src="${imgUrl}" alt="${imgAlt}">
-      <p>${bodyText}</p>`
-     Assign this content to to your HTML-container that will 
-     be dynamically loaded (you already got the reference to 
-     this container before you started the function handleSelection) */
+     /* Change content dynamically*/
 
      if (currentBtn.textContent === "Trombe Wall") {
          heading.innerHTML = `${resources.wall.headingContent}`;
@@ -127,13 +90,8 @@
          img.innerHTML = `<img src="${resources.wind.imgUrl} "alt="${resources.light.imgAlt}">`;
          content.innerHTML = `${resources.wind.bodyText}`
      }
-
-     /* 
-     Close your handleSelection function here. */
  }
- /* 
- Register all buttons to click event. The event-handler handleSelection will listen 
- for this event to happen. */
+ /*click event */
  for (let btn of btns) {
      btn.addEventListener("click", handleSelection);
 
