@@ -172,5 +172,11 @@ footer li,
         height: 20rem;
     }
     
+    #tag-line {
+        font-size 2rem;
+
+    bottom: -10rem;
+}
+    
 
 }
